@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10秒后跳转</title>
+</head>
+<body>
+    <p></p>
+    <script>
+        var p = document.querySelector('p');
+        var i = 10;
+        setInterval(function(){
+            if(i == 0){
+                location.href = 'http://www.baidu.com';
+            }else{
+                p.innerHTML = i + '秒后跳转';
+                i--;
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

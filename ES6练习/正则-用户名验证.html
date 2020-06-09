@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正则-用户名验证</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+            font-size:16px;
+        }
+        input{
+            margin-top:20px;
+            margin-left:20px;
+            width:20rem;
+            height:1.5rem;
+        }
+        button{
+            margin-top:20px;
+            margin-left:20px;
+            width:2.5rem;
+            height:1.5rem;
+        }
+        div{
+            margin-top:20px;
+            margin-left:20px;
+            width:100px;
+            height:100px;
+            background-color:gray;
+        }
+        .d1{
+            background-color:tomato;
+        }
+        .d2{
+            background-color:skyblue;
+        }
+    </style>
+</head>
+<body>
+    失去焦点验证
+    <input type="text" value="" id="names">
+    <div>红：错误；蓝：通过； 0-9,a-z,A-Z,_,-,6-12位</div>
+    <script>
+        var ipt = document.querySelector('#names');
+        var div = document.querySelector('div');
+        var regexp = /^[0-9a-zA-Z-_]{6,12}$/;
+        ipt.addEventListener('blur',function(){
+            if(regexp.test(this.value)){
+                div.className = 'd2';
+            }else{
+                div.className = 'd1';
+            }
+        });
+    </script>
+</body>
+</html>

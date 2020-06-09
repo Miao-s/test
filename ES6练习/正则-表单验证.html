@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+            font-size:14px;
+        }
+        li{
+            list-style: none;
+            height:5rem;
+            line-height:4rem;
+        }
+        .box{
+            margin:10% 60px 0 60px;
+        }
+        label{
+            display:inline-block;
+            width:6rem;
+            height:1.5rem;
+        }
+        input{
+            width:16rem;
+            height:1.5rem;
+        }
+        .errors{
+            color:red;
+        }
+        .oks{
+            color:skyblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li><label>用户名：</label><input type="text" class="names"><span>大小写字母,数字,_,4到15位</span></li>
+            <li><label>手机：</label><input type="text" class="tel"><span>8位</span></li>
+            <li><label>QQ：</label><input type="text" class="QQ"><span>4位起</span></li>
+            <li><label>密码：</label><input type="text" class="password"><span>5到17位,大小写字母,数字</span></li>
+            <li><label>确认密码：</label><input type="text" class="passwords"><span></span></li>
+        </ul>
+    </div>
+    <script>
+        var names = document.querySelector('.names');
+        var tel = document.querySelector('.tel');
+        var QQ = document.querySelector('.QQ');
+        var password = document.querySelector('.password');
+        var passwords = document.querySelector('.passwords');
+        var rename = /^[a-zA-Z][a-zA-Z0-9_]{4,15}$/;
+        var rephone = /^(13[0-9]|14[5|7]|15[0|1|2|3|4|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/;
+        var reqq = /^[1-9][0-9]{4,}$/;
+        var repw = /^[a-zA-Z]\w{5,17}$/;
+        names.onblur = function(){
+            if(rename.test(this.value)){
+                this.nextElementSibling.className = 'oks';
+                this.nextElementSibling.innerHTML = '格式正确';
+            }else{
+                this.nextElementSibling.className = 'errors';
+                this.nextElementSibling.innerHTML = '格式错误';
+            }
+        }
+        tel.onblur = function(){
+            if(rephone.test(this.value)){
+                this.nextElementSibling.className = 'oks';
+                this.nextElementSibling.innerHTML = '格式正确';
+            }else{
+                this.nextElementSibling.className = 'errors';
+                this.nextElementSibling.innerHTML = '格式错误';
+            }
+        }
+        QQ.onblur = function(){
+            if(reqq.test(this.value)){
+                this.nextElementSibling.className = 'oks';
+                this.nextElementSibling.innerHTML = '格式正确';
+            }else{
+                this.nextElementSibling.className = 'errors';
+                this.nextElementSibling.innerHTML = '格式错误';
+            }
+        }
+        password.onblur = function(){
+            if(repw.test(this.value)){
+                this.nextElementSibling.className = 'oks';
+                this.nextElementSibling.innerHTML = '格式正确';
+            }else{
+                this.nextElementSibling.className = 'errors';
+                this.nextElementSibling.innerHTML = '格式错误';
+            }
+        }
+        passwords.onblur = function(){
+            if(password.value === this.value){
+                this.nextElementSibling.className = 'oks';
+                this.nextElementSibling.innerHTML = '密码一致';
+            }else{
+                this.nextElementSibling.className = 'errors';
+                this.nextElementSibling.innerHTML = '密码不一致';
+            }
+        }
+    </script>
+</body>
+</html>

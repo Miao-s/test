@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<HTML>
+<head>
+	<meta charset="utf-8">
+	<title>向上/下滑动</title>
+	<script src="jquery-1.7.2.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("#b1").click(function(){
+				$("#p1").slideUp("slow",function(){alert("已滑上");});
+			});
+			$("#b2").click(function(){
+				$("#p1").slideDown("slow",function(){alert("已滑下");});
+			});
+			$("#b3").click(function(){
+				$("#p3").slideToggle("slow");
+			});
+		});
+	</script>
+</head>
+<body>
+	<div>
+		<p id="p1">滑上/滑下</p>
+		<button id="b1">向上滑动</button>
+		<button id="b2">向下滑动</button>
+	</div>
+	<div>
+		<p id="p3">滑上/滑下</p>
+		<button id="b3">向上/下滑动</button>
+	</div>
+</body>
+</HTML>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            width:50px;
+            height:30px;
+        }
+
+    </style>
+</head>
+<body>
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+    <button id="fb">发布</button>
+    <button id="zd">置顶</button>
+    <br>
+    删除第几个：<input type="text"> 
+    <button id="sc">删除</button>
+    <ul>
+
+    </ul>
+    <script>
+        var text = document.querySelector('textarea');
+        var te = document.querySelector('input');
+        var fb = document.getElementById('fb');
+        var zd = document.getElementById('zd');
+        var sc = document.getElementById('sc');
+        var ul = document.querySelector('ul');
+        //发布
+        fb.onclick = function(){
+            if(text.value == ''){
+                alert('请输入内容');
+                return false;
+            }else{
+                var li = document.createElement('li');
+                li.innerHTML = text.value;
+                ul.appendChild(li);
+            }
+        }
+        //置顶发布
+        zd.onclick = function(){
+            if(text.value == ''){
+                alert('请输入内容');
+                return false;
+            }else{
+                var li = document.createElement('li');
+                li.innerHTML = text.value;
+                li.style.color = 'red';
+                ul.insertBefore(li , ul.children[0]);
+            }
+        }
+        //删除
+        sc.onclick = function(){
+            if(ul.children.length == 0){
+                //禁用
+                alert('无内容无法删除');
+                return;
+            }else{
+                ul.removeChild(ul.children[te.value - 1]);
+            }
+        }
+    </script>
+</body>
+</html>

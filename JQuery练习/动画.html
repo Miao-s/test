@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<HTML>
+<head>
+	<meta charset="utf-8">
+	<title>动画</title>
+	<script src="jquery-1.7.2.js"></script>
+	<style>
+		div{
+			background:#98bf21;
+			height:100px;
+			width:100px;
+			position:absolute;
+		}
+	</style>
+	<script>
+		$(document).ready(function(){
+			$("#b1").click(function(){
+				var div1 = $("#d2");
+				div1.animate({
+					left:'250px',
+					height:'150px',
+					width:'150px',
+				});
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="d1">
+		<p id="p1">jquery</p>
+	</div></br></br></br></br></br>
+	<button id="b1">启动动画</button>
+	<div id="d2">
+		<p id="p2">jquery</p>
+	</div>
+</body>
+</HTML>

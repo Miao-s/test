@@ -1,0 +1,30 @@
+*{
+	padding:0;
+	margin:0;
+}
+.d{
+	margin:0 auto 20px auto;
+	width:1200px;
+	text-align:center;
+	font-size:40px;
+}
+.d1{
+	height:100px;
+	background:tomato;
+	line-height:100px;
+}
+.d2{
+	height:200px;
+	background:tomato;
+	line-height:200px;
+}
+.d3{
+	height:400px;
+	background:tomato;
+	line-height:400px;
+}
+.d4{
+	height:200px;
+	background:tomato;
+	line-height:200px;
+}

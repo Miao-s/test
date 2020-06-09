@@ -1,0 +1,122 @@
+*{
+	padding:0;
+	margin:0;
+}
+body{	
+	background:#f0f0f0;
+}
+.box{
+	padding:0 25px;
+	margin:20px auto;
+}
+a{
+	text-decoration:none;
+	color:#000;
+}
+/*第一栏*/
+.box1{
+	width:1200px;
+	height:450px;
+}
+.left{
+	float:left;
+}
+.left ul li{
+	list-style:none;
+}
+.left ul li a{
+	display:inline-block;
+	background:#ffa2007c;
+	height:50px;
+	width:200px;
+	line-height:50px;
+	padding-left:20px;
+
+}
+.left ul li a:hover{
+	background:#ff634779;
+}
+.right{
+	float:left;
+}
+.right{
+	height:450px;
+}
+.box1 .right a img{
+	height:450px;
+	width:980px;
+}
+/*第二栏*/
+.box2{
+	width:1200px;
+	height:400px;
+}
+.box2 .bn{
+	float:left;
+	margin-right:20px;
+	width:285px;
+	height:400px;
+	background-color:#ff63474d;
+}
+.box2 .bnr{
+	margin-right:0px;
+}
+.box2 .bn img{
+	width:285px;
+	height:250px;
+}
+.box2 .bn h3{
+	font-size:16px;
+	margin:10px 0 0 20px;
+}
+.box2 .bn p{
+	color:gray;
+	font-size:14px;
+	margin:10px 20px 0 20px;
+}
+/*第三栏*/
+.box3{
+	height:820px;
+	width:1200px;
+}
+.box3 .cn{
+	float:left;
+	width:225px;
+	background-color:#ff63474d;
+}
+/*左边*/
+.box3 .left{
+	height:820px;
+	width:224px;
+}
+.box3 .left a img{
+	width:224px;
+	height:250px;
+}
+.box3 .left a h3{
+	font-size:16px;
+	margin:10px 0 0 20px;
+}
+/*右边*/
+.box3 .right{
+	height:400px;
+	width:224px;
+	margin-left:20px;
+	margin-bottom:20px;
+}
+.box3 .right .bt0{
+	margin-bottom:0;
+}
+.box3 .right a img{
+	width:224px;
+	height:250px;
+}
+.box3 .right a h3{
+	font-size:16px;
+	margin:10px 0 0 20px;
+}
+.box3 .right a p{
+	color:gray;
+	font-size:14px;
+	margin:10px 20px 0 20px;
+}

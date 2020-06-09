@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品查询</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        div{
+            width:350px;
+            margin:20px auto;  
+            text-align:center;
+        }
+        .btn{
+            width:60px;
+            height:30px;
+        }
+        .te{
+            width:30px;
+            height:25px;
+            line-height:25px;
+            text-align:center;
+        }
+        .tex{
+            width:100px;
+            height:25px;
+            line-height:25px;
+            text-align:center;
+        }
+        table{
+            margin:0 auto;
+        }
+        th,td{
+            width:100px;
+            height:30px;
+            text-align:center;
+            line-height:20px;
+            border-right:1px solid #000;
+        }
+        th,tr{
+            border-bottom:1px solid #000;
+        }
+        thead th:last-child,tr td:last-child{
+            border-right:none;
+        }
+        tbody tr:last-child{
+            border-bottom:none;
+        }
+        table{
+            border:1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <span>按照价格查询：</span>
+        <input type="text" class="min te">-<input type="text" class="max te">
+        <input type="button" value="查询" class="btn b1">
+        <br>
+        <span>按照商品名称查询：</span>
+        <input type="text" class="bename tex">
+        <input type="button" value="查询" class="btn b2">
+    </div>
+    <table>
+        <thead>
+            <th>序号</th>
+            <th>名称</th>
+            <th>价格</th>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <script src="commodityQuery.js"></script>
+</body>
+</html>

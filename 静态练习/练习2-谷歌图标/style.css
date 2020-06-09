@@ -1,0 +1,20 @@
+*{
+	padding:0;
+	margin:0;
+}
+.blue{
+	font-size:100px;
+	color:blue;
+}
+.red{
+	font-size:100px;
+	color:red;
+}
+.orange{
+	font-size:100px;
+	color:orange;
+}
+.green{
+	font-size:100px;
+	color:green;
+}

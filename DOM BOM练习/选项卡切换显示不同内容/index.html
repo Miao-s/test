@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选项卡切换</title>
+    <style>
+        *{
+            padding:0;
+            maring:0;
+        }
+        body{
+            padding:50px 10%;
+        }
+        li{
+            list-style:none;
+        }
+        .clearfix:after{
+            content:"";
+            display:block;
+            height:0;
+            clear:both;
+            visibility:hidden;
+        }
+        .tab1{
+            font-size:14px;
+            width:600px;
+            background-color:teal;
+            border-radius:20px;
+        }
+        #st{
+            border-top-left-radius:20px;
+            border-bottom-left-radius:20px;
+        }
+        div ul li{
+            float:left;
+            width:100px;
+            height:50px;
+            text-align:center;
+            line-height:50px;;
+        }
+        .bgc{
+            background:skyblue;
+        }
+        .item{
+            display:none;
+            margin-left:20px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="tab1 clearfix">
+        <ul>
+            <li id="st">选项卡1</li>
+            <li>选项卡2</li>
+            <li>选项卡3</li>
+            <li>选项卡4</li>
+        </ul>
+    </div>
+    <div class="tab2">
+        <div class="item" >内容1</div>
+        <div class="item">内容2</div>
+        <div class="item">内容3</div>
+        <div class="item">内容4</div>
+    </div>
+    <script>
+        var tab1 = document.querySelector('.tab1');
+        var li = tab1.querySelectorAll('li');
+        var tab2 = document.querySelector('.tab2');
+        var item = tab2.querySelectorAll('.item');
+        for(var i = 0; i < li.length; i++){
+            li[i].setAttribute('index',i);//导出i值到属性里
+            li[i].onclick = function(){
+                //点击变色，其他不变
+                for(var a = 0; a < li.length; a++){
+                    li[a].className = '';
+                }
+                this.className = 'bgc';
+                //点击显示不同内容
+                var index = this.getAttribute('index');
+                for(var a = 0; a < item.length; a++){
+                    item[a].style.display = 'none';
+                }
+                item[index].style.display = 'block';
+            }
+        } 
+    </script>
+</body>
+</html>

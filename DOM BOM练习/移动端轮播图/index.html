@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>移动端轮播图效果</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="rotation.js"></script>
+    <script>
+        window.addEventListener('load',function(){
+            var box = document.querySelector('#box');
+            var ul = document.querySelector('ul');
+            var ol = document.querySelector('ol');
+            rotation(box,ul,ol);
+        });
+    </script>
+</head>
+<body>
+    <div id="box">
+        <!-- 轮播图 -->
+        <ul>
+            <li><img src="img/i1.jpg" id="1"></li>
+            <li><img src="img/i2.jpg" id="2"></li>
+            <li><img src="img/i3.jpg" id="3"></li>
+            <li><img src="img/i4.jpg" id="4"></li>
+        </ul>
+        <!-- 小圆点 -->
+        <ol>
+        </ol>   
+    </div>
+</body>
+</html>

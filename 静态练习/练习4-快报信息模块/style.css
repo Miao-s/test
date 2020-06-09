@@ -1,0 +1,38 @@
+*{
+	padding:0;
+	margin:0;
+}
+.box{
+	width:250px;
+	height:170px;
+	border:1px solid #ccc;
+}
+/*居中*/
+.box{
+	margin:100px auto;
+}
+h3{
+	height:32px;
+	border-bottom:1px dotted #ccc;
+	font-size:14px;
+	font-weight:400;
+	line-height:32px;
+	padding-left:15px;
+}
+.box ul{
+	padding-top:7px;
+}
+.box ul li{
+	list-style:none;
+	height:23px;
+	line-height:23px;
+	margin-left:20px;
+}
+.box ul li a{
+	text-decoration:none;
+	color:#666;
+	font-size:12px;
+}
+.box ul li a:hover{
+	text-decoration:underline;
+}

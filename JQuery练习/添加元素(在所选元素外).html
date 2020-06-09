@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>添加元素</title>
+		<meta charset="utf-8">
+		<script src="jquery-1.7.2.js"></script>
+		<script>
+			$(document).ready(function(){
+				$("#b1").click(function(){
+					$("#p1").before("<p>111</P>");
+				});
+				$("#b2").click(function(){
+					$("#p1").after("<p>111</P>");
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<p  id="p1" style="width:200px;heigth:200px;background-color:blue">123</p>
+		<button id="b1">在前面添加</button>
+		<button id="b2">在后面添加</button>
+	</body>
+</html>

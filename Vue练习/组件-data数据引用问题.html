@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>组件的data数据引用问题</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        组件1:独立
+        <cad></cad>
+        <cad></cad>
+        <cad></cad>
+    </div>
+    <div id="app2">
+        组件2：共享
+        <cpd></cpd>
+        <cpd></cpd>
+        <cpd></cpd>
+    </div>
+    <script>
+        var data = {ddd:0}
+        Vue.component('cad',{
+            template:'<button @click="msg++">{{msg}}</button>',
+            data:function(){
+                return {msg:0}
+            }
+        })
+        Vue.component('cpd',{
+            template:'<button @click="ddd++">{{ddd}}</button>',
+            data:function(){
+                return data
+            }
+        })
+        var app = new Vue({
+            el:"#app",
+        })
+        var app2 = new Vue({
+            el:"#app2",
+        })
+    </script>
+</body>
+</html>

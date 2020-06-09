@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        .box{
+            margin:20px;
+            position:relative;
+        }
+        #pf{
+            width:100px;
+            height:50px;
+            background-color:gray;
+            opacity:0.4;
+            position:absolute;
+            border-radius:10px;
+            left:0;
+            z-index:-1;
+            /*
+            js中mouseenter和mouseleave抽搐问题，
+            原因：遮盖层覆盖了信息层，无法读取到，
+            解决方法：调低层次z-index
+            解决方法2：使用pointer-events:none使鼠标无法触发该层
+            */
+        }
+        li{
+            list-style:none;
+            float:left;
+            width:100px;
+            height:50px;
+            font-size:14px;
+            font-weight:400;
+            line-height:50px;
+            text-align:center;
+        }
+    </style>
+    <script src="animate.js"></script>
+    <script>
+        /*
+            js中mouseenter和mouseleave抽搐问题，
+            原因：遮盖层覆盖了信息层，无法读取到，
+            解决方法：调低层次z-index
+            解决方法2：使用pointer-events:none使鼠标无法触发该层
+            */
+        window.addEventListener('load',function(){
+            var pf = document.getElementById('pf');
+            var box = document.querySelector('.box');
+            var li = box.querySelectorAll('li');
+            var current = 0;
+            for(var i = 0 ; i < li.length ; i++){
+                li[i].addEventListener('mouseenter',function(){
+                    animate(pf,this.offsetLeft);
+                });
+                li[i].addEventListener('mouseleave',function(){
+                    animate(pf,current);
+                });
+                li[i].addEventListener('click',function(){
+                    current = this.offsetLeft;
+                });
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="box">
+        <span id="pf"></span>
+        <ul>
+            <li>第一个</li>
+            <li>第二个</li>
+            <li>第三个</li>
+            <li>第四个</li>
+            <li>第五个</li>
+            <li>第六个</li>
+        </ul>
+    </div>
+</body>
+</html>

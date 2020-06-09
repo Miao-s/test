@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>倒计时new</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        body{
+            margin-top:50px;
+            margin-left:50px;
+        }
+        .box{
+            font-size:24px;
+            font-weight:500;
+            line-height:40px;
+            text-align:center;
+            background-color:skyblue;
+            width:40px;
+            height:40px;
+            float:left;
+            margin-left:1px;
+            margin-top:5px;
+        }
+        .clearfix:after{
+            content:'';
+            display:block;
+            height:0;
+            clear:both;
+            visibility:hidden;
+        }
+    </style>
+    <script>
+        window.addEventListener('load',function(){
+            var box1 = document.getElementById('box1');
+            var box2 = document.getElementById('box2');
+            var box3 = document.getElementById('box3');
+            //定义时间
+            var inputTime = +new Date('2020-3-24 23:59:59');
+            countDown();
+            function countDown(){
+                var nowTime = +new Date();
+                var times = (inputTime - nowTime) / 1000;
+                var h = parseInt(times / 60 / 60);
+                h = h < 10 ? '0' + h : h;
+                var m = parseInt(times / 60 % 60);
+                m = m < 10 ? '0' + m : m;
+                var s = parseInt(times % 60);
+                s = s < 10 ? '0' + s : s;
+                box1.innerHTML = h;
+                box2.innerHTML = m;
+                box3.innerHTML = s;
+            }
+            setInterval(countDown,1000);    
+        });
+    </script>
+</head>
+<body>
+    <p class="clearfix">距离3月24日0点还有：</p>
+    <div id="box1" class="box">00</div>
+    <div id="box2" class="box">00</div>
+    <div id="box3" class="box">00</div>
+</body>
+</html>

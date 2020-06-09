@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鼠标距离盒子坐标</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        div{
+            margin:100px;
+            width:400px;
+            height:400px;
+            background-color:skyblue;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p></p>
+    </div>
+    <script>
+        var div = document.querySelector('div');
+        var p = document.querySelector('p');
+        div.addEventListener('mousemove',function(e){
+            var x = e.pageX - div.offsetLeft;
+            var y = e.pageY - div.offsetTop;
+            p.innerHTML = '点击位置在盒子内 x坐标为' + x + '，y坐标' + y;
+        });
+    </script>
+</body>
+</html>

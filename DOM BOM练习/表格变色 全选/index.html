@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表格</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+            font-size:16px;
+        }
+        table{
+            margin:80px auto 0;
+            border-collapse:collapse;
+        }
+        thead{
+            background-color:aqua;
+        }
+        tbody{
+            background-color:khaki;
+        }
+        .tbody1{
+            background-color:aquamarine;
+        }
+        th{
+            width:120px;
+            height:30px;
+        }
+        thead tr{
+            border-bottom:1px solid rgb(101, 101, 101);
+        }
+        tbody tr th{
+            font-weight:200;
+            font-size:14px;
+        }
+        th input{
+            width:80px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th><input type="checkbox" id="total"></th>
+                <th>编号</th>
+                <th>名称</th>
+                <th>数量</th>
+                <th>单位</th>
+                <th>留言</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><input type="checkbox" class="cb"></th>
+                <th>00100</th>
+                <th>硬糖</th>
+                <th>100</th>
+                <th>颗</th>
+                <th>1</th>
+            </tr>
+            <tr>
+                <th><input type="checkbox" class="cb"></th>
+                <th>00101</th>
+                <th>软糖</th>
+                <th>80</th>
+                <th>颗</th>
+                <th>2</th>
+            </tr>
+            <tr>
+                <th><input type="checkbox" class="cb"></th>
+                <th>00102</th>
+                <th>牛奶糖</th>
+                <th>200</th>
+                <th>颗</th>
+                <th>2</th>
+            </tr>
+            <tr>
+                <th><input type="checkbox" class="cb"></th>
+                <th>00103</th>
+                <th>棒棒糖</th>
+                <th>60</th>
+                <th>条</th>
+                <th>3</th>
+            </tr>
+            <tr>
+                <th><input type="checkbox" class="cb"></th>
+                <th>00104</th>
+                <th>跳跳糖</th>
+                <th>70</th>
+                <th>包</th>
+                <th>1</th>
+            </tr>
+            <tr>
+                <th><input type="checkbox" class="cb"></th>
+                <th>00105</th>
+                <th>口香糖</th>
+                <th>90</th>
+                <th>条</th>
+                <th>3</th>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        //表格变色
+        var tb = document.querySelector('tbody');
+        var tbr = tb.querySelectorAll('tr');
+        for(var i = 0;i < tbr.length;i++){
+            tbr[i].onmouseover = function(){
+                this.className = 'tbody1';
+            }
+            tbr[i].onmouseout = function(){
+                this.className = '';
+            }
+        }
+        //全选 取消全选
+        var total = document.getElementById('total');
+        var ck = document.querySelectorAll('.cb');
+        total.onclick = function(){
+            for(var i = 0; i < ck.length; i++){
+                //标签属性checked="checked"时选中，
+                //如果checked为true则选中 false为未选中
+                //让全选和复选框相同值
+                 ck[i].checked = this.checked;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>明文密文切换/切换css/文字显示隐藏</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        div{
+            margin-left:10%;
+            margin-top:10%;
+            background-color:#ffaacc;
+            width:400px;
+            height:300px;
+            line-height:300px;
+            text-align:center;
+            border-radius: 20px;
+        }
+        input{
+            width:200px;
+            height:50px;
+            background:transparent;
+            border:none;
+            border-bottom:1px solid black;
+            font-size:15px;
+            outline:none;
+        }
+        button{
+            background:transparent;
+            border:1px solid tomato;
+            color:tomato;
+            border-radius:12px;
+            height:50px;
+            width:50px;
+            font-size:15px; 
+            outline:none;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="text" value="请输入密码">
+        <button>切换</button>
+    </div>
+    <script>
+        var ipt = document.querySelector('input');
+        var btn = document.querySelector('button');
+        //输入时默认文字切换
+        ipt.onfocus = function(){
+            if(this.value === '请输入密码'){
+                this.type = 'password';
+                this.value = '';
+            }
+        }
+        //空时切换回默认文字
+        ipt.onblur = function(){
+            if(this.value === ''){
+                this.type = 'text';
+                this.value = '请输入密码';
+            }
+        }
+        //切换密文明文
+        var flag = 1;
+        btn.onclick = function(){
+            switch(flag) {
+                case 0 :ipt.type = 'password';
+                        flag = 1;
+                        this.style.background = 'transparent';
+                        break;
+                case 1 :ipt.type = 'text';
+                        flag = 0;
+                        this.style.background = 'skyblue';
+                        break;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>电梯导航</title>
+    <script src="jquery-1.7.2.js"></script>
+    <script>
+        $(function(){
+            $('li').each(function(i,n){
+                $(this).attr('index',i+1);
+            });
+            $('li').on('click',function(){
+                $(this).siblings().removeClass('Dc');
+                $(this).addClass('Dc');
+                var a = $(this).attr('index');
+                var box = '.b' + a ;
+                $('html,body').animate({scrollTop:$(box).offset().top});
+            });
+            $('.box').scroll(function(){
+                console.log($(window).scrollTop());
+            });
+            //剩下内容：移动到该位置自动跳到指定按钮；
+        })
+    </script>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        ul{
+            position:fixed;
+            top:30%;
+            left:5px;
+        }
+        li{
+            width:50px;
+            height:50px;
+            list-style: none;
+            border:1px solid #000;
+            margin-bottom:1px;
+            text-align:center;
+            line-height:50px;
+            cursor:pointer;
+        }
+        div{
+            margin:0 70px;
+            background-color:skyblue;
+            margin-bottom:5px;
+            text-align:center;
+        }
+        .b1{
+            height:300px;
+            line-height:300px;
+        }
+        .b2{
+            height:100px;
+            line-height:100px;
+        }
+        .b3 , .b4{
+            height:500px;
+            line-height:500px;
+        }
+        .b5{
+            height:300px;
+            line-height:300px;
+        }
+        .Dc{
+            background-color:gray;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <div class="box b1">header</div>
+    <div class="box b2">nav</div>
+    <div class="box b3">bodyer</div>
+    <div class="box b4">bodyer</div>
+    <div class="box b5">footer</div>
+</body>
+</html>

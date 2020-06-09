@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>键盘输入获取焦点(仿京东)</title>
+    <style>
+        body{
+            margin-top:25%;
+            margin-left:25%;
+            height:3000px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" >
+    <button>点击</button>
+    <script>
+        var ipt = document.querySelector('input');
+        var btn = document.querySelector('button');
+        document.addEventListener('keyup',function(e){
+            if (e.keyCode == 83) {
+                ipt.focus();
+            }
+        });
+    </script>
+</body>
+</html>

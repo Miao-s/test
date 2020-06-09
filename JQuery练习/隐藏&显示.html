@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<HTML>
+<head>
+	<meta charset="utf-8">
+	<title>隐藏/显示</title>
+	<script src="jquery-1.7.2.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("#b1").click(function(){
+				$("#p1").hide(2000);
+			});
+			$("#b2").click(function(){
+				$("#p1").show(2000);
+			});
+			$("#b3").click(function(){
+				$("#p3").toggle(2000);
+			});
+		});
+	</script>
+</head>
+<body>
+	<div>
+		<p id="p1">点击隐藏/显示</p>
+		<button id="b1">隐藏</button>
+		<button id="b2">显示</button>
+	</div>
+	<div>
+		<p id="p3">点击隐藏/显示</p>
+		<button id="b3">隐藏/显示</button>
+	</div>
+</body>
+</HTML>

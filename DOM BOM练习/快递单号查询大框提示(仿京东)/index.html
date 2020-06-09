@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>快递单号查询大框提示(仿京东)</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        #box{
+            margin-left:100px;
+            margin-top:100px;
+            width:500px;
+            height:200px;
+            background-color:skyblue;
+            border-radius:10px;
+            position:relative;
+        }
+        input{
+            position:absolute;
+            top:80px;
+            left:50px;
+            width:200px;
+            height:18px;
+        }
+        #con{
+            height:30px;
+            width:180px;
+            position:absolute;
+            top:30px;
+            left:60px;
+            background-color:bisque;
+            border-radius:8px;
+            line-height:30px;
+            text-align:center;
+            border:1px solid rbga(0,0,0,.2);
+            box-shadow:0 2px 4px rbga(0,0,0,.2);
+            padding:5px 0;
+            font-size:18px;
+            color:#333;
+            display:none;
+        }
+        #con::before{
+            content:'';
+            width:0;
+            height:0;
+            position:absolute;
+            top:40px;
+            left:70px;
+            border:8px solid #000;
+            border-style:solid dashed dashed;
+            border-color:bisque transparent transparent;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div id="con"></div>
+        <input type="text" placeholder="请输入">
+    </div>
+    <script>
+        var box = document.getElementById('box');
+        var con = document.getElementById('con');
+        var ipt = document.querySelector('input');
+        //文本框有内容，则显示提示框，无则消失
+        //点击显示，无则消失
+        //检测键盘输入，给表单添加键盘事件；
+        //将input得值value赋给con里
+        ipt.addEventListener('focus',function(){
+            if(this.value !== ''){
+                con.style.display = 'block';
+            }
+        });
+        ipt.addEventListener('blur',function(){
+            con.style.display = 'none';
+        });
+        ipt.addEventListener('keyup',function(){
+            if(ipt.value == false){
+                con.style.display = 'none';
+                con.innerText = '';
+            }else{
+                con.style.display = 'block';
+                con.innerText = this.value;
+            }
+        });
+        ipt.addEventListener('blur',function(){
+            con.style.display = 'none';
+        });
+    </script>
+</body>
+</html>

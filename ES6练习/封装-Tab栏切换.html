@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tab栏切换(Tab.js)</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+            
+        }
+        li{
+            list-style:none;
+            float:left;
+            width:80px;
+            height:50px;
+            border-right:1px solid #000;
+            border-bottom:1px solid #000;
+            position:relative;
+        }
+        .list{
+            border-bottom:1px solid #fff;
+        }
+        .tebadd{
+            float:right;
+            width:30px;
+            height:50px;
+            cursor:pointer;
+            border-left:1px solid #000;
+        }
+        .box{
+            width:600px;
+            border:1px solid #000;
+            margin:50px;
+        }
+        nav{
+            height:50px;
+            border-bottom:1px solid #000;
+            text-align: center;
+            line-height:50px;
+        }
+        .tebscon{
+            width:600px;
+            height:200px;
+        }
+        .iconfont{
+            display:block;
+            position:absolute;
+            top:0;
+            right:0;
+            width:16px;
+            height:16px;
+            font-size:12px;
+            border-bottom-left-radius:6px;
+            background-color:rgba(0, 0, 0, 0.6);
+            text-align:center;
+            line-height: 12px;
+            cursor:pointer;
+        }
+        section{
+            display:none;
+        }
+        .conative{
+            display:block;
+        }
+        li input{
+            width:60%;
+            height:20px;
+        }
+        .tebscon section input{
+            width:596px;
+            height:196px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <nav>
+            <ul>
+                <li class="list"><span>测试1</span><span class="iconfont">x</span></li>
+                <li><span>测试2</span><span class="iconfont">x</span></li>
+                <li><span>测试3</span><span class="iconfont">x</span></li>
+            </ul>
+            <div class="tebadd">
+                <span>+</span>
+            </div>
+        </nav>
+        <div class="tebscon">
+            <section class="conative">内容1</section>
+            <section>内容2</section>
+            <section>内容3</section>
+        </div>
+    </div>
+    <script src="tab.js"></script>
+</body>
+</html>

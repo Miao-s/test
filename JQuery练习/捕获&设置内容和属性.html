@@ -1,0 +1,47 @@
+<! DOCTYPE HTML>
+<html>
+	<head>
+		<meta charest="utf-8">
+		<title>设置/捕获内容和属性</title>
+		<script src="jquery-1.7.2.js"></script>
+		<script>
+			$(document).ready(function(){
+				$("#b1").click(function(){
+					var a1 = $("#p1").text();
+					$("#i1").val(a1);
+				});
+				$("#b2").click(function(){
+					var a2 = $("#p1").html();
+					$("#i1").val(a2);
+				});
+				$("#b3").click(function(){
+					alert($("#i2").val());
+				});
+				$("#b4").click(function(){
+					$("#p1").text("text内容改变了。");
+				});
+				$("#b5").click(function(){
+					$("#p1").html("html<b>内容</b>改变了。");
+				});
+				$("#b6").click(function(){
+					$("#i2").val("值改变了");
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<p id="p1">这是原内容<br/>下面按钮获取和修改</p>
+		<button id="b1">显示text</button>
+		<button id="b4">修改text</button>
+		<br/>
+		<button id="b2">显示html</button>
+		<button id="b5">修改html</button>
+		<br/>
+		<button id="b3">显示目前input的value</button>
+		<button id="b6">修改val</button>
+		<br/>
+		<input type="text" id="i2" value="这是值" style="background-color:black">
+		<br/>
+		<input type="text" id="i1" value="" style="width: 500px">
+	</body>
+</html>

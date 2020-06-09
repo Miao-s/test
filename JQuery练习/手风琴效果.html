@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>手风琴效果</title>
+    <script src="jquery-1.7.2.js"></script>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        .nav{
+            width:600px;
+            height:50px;
+            border:1px solid #000;
+            margin-top:10px;
+            margin-left:10px;
+        }
+        .box{
+            width:50px;
+            height:50px;
+            margin-right:10px;
+            float:left;
+        }
+        .tomato{
+            background-color:tomato;
+            margin-left:10px;
+        }
+        .green{
+            background-color:green;
+        }
+        .pink{
+            background-color:pink;
+        }
+        .gray{
+            background-color:gray;
+        }
+        .skyblue{
+            background-color:skyblue;
+        }
+        .n{
+            display:block;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <div class="box tomato"></div>
+        <div class="box green"></div>
+        <div class="box pink"></div>
+        <div class="box gray"></div>
+        <div class="box skyblue"></div>
+    </div>
+    <script>
+        $('.nav div').mouseenter(function(){
+            $(this).stop().animate({
+                width:100
+            });
+        });
+        $('.nav div').mouseleave(function(){
+            $(this).stop().animate({
+                width:50
+            });
+        });
+    </script>
+</body>
+</html>

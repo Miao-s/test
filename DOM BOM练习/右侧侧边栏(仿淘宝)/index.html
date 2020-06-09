@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>右侧侧边栏 划下出现返回顶部</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .w{
+            margin:0 100px;
+            margin-bottom:10px;
+            text-align: center;
+        }
+        .header{
+            height:100px;
+            background-color:skyblue;
+        }
+        .banner{
+            height:200px;
+            background-color:gray;
+        }
+        .main{
+            height:1000px;
+            background-color:gold;
+        }
+        .bar{
+            width:50px;
+            height:100px;
+            background-color:tomato;
+            position:absolute;
+            top:400px;
+            right:10px;
+        }
+        .goback{
+            display:none;
+            width:50px;
+            height:50px;
+            font-size:12px;
+            line-height:50px;
+            background-color:hotpink;
+        }
+    </style>
+</head>
+<body>
+    <div class="bar">
+        <span class="goback">返回顶部</span>
+    </div>
+    <div class="header w">头部区域</div>
+    <div class="banner w">banner区域</div>
+    <div class="main w">主体区域</div>
+    <script>
+        var bar = document.querySelector('.bar');
+        var banner = document.querySelector('.banner');
+        var main = document.querySelector('.main');
+        var goback = document.querySelector('.goback');
+        var bannerTop = banner.offsetTop;
+        var barTop = bar.offsetTop - bannerTop;
+        var mainTop = main.offsetTop;
+        document.addEventListener('scroll',function(){
+            if(window.pageYOffset >= bannerTop){
+                bar.style.position = 'fixed';
+                bar.style.top = barTop + 'px';
+            }else{
+                bar.style.position = 'absolute';
+                bar.style.top = '400px';
+            }
+            if(window.pageYOffset >= mainTop){
+                goback.style.display = 'block';
+            }else{
+                goback.style.display = 'none';
+            }
+        });
+        goback.addEventListener('click',function(){
+            animate(window,0);
+        });
+    //先清除之前的定时器
+    clearInterval(obj.timer);
+    function animate(obj,target){
+        obj.timer = setInterval(function(){
+        //步值 = 目标位置 - 现在位置，缓动则加上/10
+        var step = (target - window.pageYOffset) / 10;
+        //让其取整，小数会出现结果有问题
+        step = step > 0 ? Math.ceil(step) : Math.floor(step);
+            if(window.pageYOffset == target){
+            //停止动画，即停止定时器
+                clearInterval(obj.timer);
+            }
+        //原来位置+增加长度 = 现在长度
+            window.scroll(0,window.pageYOffset + step);
+        },15);
+    }
+    </script>
+</body>
+</html>

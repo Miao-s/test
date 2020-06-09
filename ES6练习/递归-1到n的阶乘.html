@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //如果n为1，则输出1；
+        /*
+        假设输入5，
+        一：fn(5) = 5 * fn(4) = 120;
+        二：fn(4) = 4 * fn(3) = 24;
+        三：fn(3) = 3 * fn(2) = 6;
+        四：fn(2) = 2 * fn(1) = 2;
+        五：fn(1) = 1;
+        */
+        function fn(n){
+            if(n === 1){
+                return 1;
+            }
+            return n * fn( n - 1);
+        }
+        console.log(fn(5));
+    </script>
+</body>
+</html>

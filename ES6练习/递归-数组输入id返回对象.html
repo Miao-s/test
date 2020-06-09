@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var data = [{
+            id:1,
+            name:'1号',
+            goods:[{ 
+                id:11,
+                gname:'1号中的1号'
+            },{
+                id:12,
+                gname:'1号中的2号'
+            }]
+        },{
+            id:2,
+            name:'2号'
+        }];
+        //输入id返回对象
+        function getID(json,id){
+            var a = {};
+            json.forEach(function(item){
+                if(item.id == id){
+                    a = item;
+                    return item;
+                }else if(item.goods && item.goods.length > 0){
+                    //里层数据
+                    //条件：里面有goods数组并且数组长度不为0
+                    a = getID(item.goods,id);
+                }
+            }); 
+            return a;
+        }
+        console.log(getID(data,1));
+        console.log(getID(data,2));
+        console.log(getID(data,11));
+        console.log(getID(data,12));
+    </script>
+</body>
+</html>

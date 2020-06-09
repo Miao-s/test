@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>xx秒后可再次点击</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        button{
+            width:40px;
+            height:40px;
+            border-radius:5px;
+            background-color:gray;
+            margin:100px;
+        }
+    </style>
+    <script>
+        window.addEventListener('load',function(){
+            var btn = document.querySelector('button');
+            var i = 10;
+            btn.addEventListener('click',function(){
+                btn.disabled = true;
+                btn.style.color = 'skyblue';
+                var times = setInterval(function(){
+                    if(i == 0){
+                       clearInterval(times);
+                       btn.disabled = false;
+                        btn.style.color = '';
+                        btn.style.width = '40px';
+                        i = 10;
+                        btn.innerHTML = '点击';
+                    }else{
+                        btn.style.width = '120px';
+                        btn.innerHTML = i + '秒后可再次点击';
+                        i--;
+                    }
+                }, 1000);
+            });
+        });
+    </script>
+</head>
+<body>
+    <button>点击</button>
+</body>
+</html>

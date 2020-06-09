@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>添加元素</title>
+		<meta charset="utf-8">
+		<script src="jquery-1.7.2.js"></script>
+		<script>
+			$(document).ready(function(){
+				$("#b1").click(function(){
+					$("#p1").append("<b>后添加内容</b>");
+				});
+				$("#b2").click(function(){
+					$("#p1").prepend("<b>前添加内容</b>");
+				});
+				$("#b3").click(function(){
+					var a1 = "<p>添加内容1</p>";
+					var a2 = $("<p></p>").text("添加内容2");
+					var a3 = document.createElement("p");
+					a3.innerHTML = "添加内容3";
+					$("#p2").append(a1,a2,a3);
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<p id="p1">。这是原内容。</p>
+		<button id="b1">在结尾添加内容</button>
+		<button id="b2">在开头添加内容</button>
+		<p id="p2">一个段落。</p>
+		<button id="b3">三种创建方式添加</button>
+	</body>
+</html>

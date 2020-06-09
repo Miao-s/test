@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+</head>
+<body>
+    <h1>Time</h1>
+    <p>newTime</p>
+
+    <script>
+        var h1 = document.querySelector('h1');
+        var p = document.querySelector('p');
+        date = new Date();
+        function  getTime(){
+            var y = date.getFullYear();
+            var m = date.getMonth() + 1;
+            var d = date.getDate();
+            var h = date.getHours();
+            var r = date.getDay()
+            var rarr = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
+            var n = date.getMinutes();
+            var s = date.getSeconds();
+
+            return y + '年' + m + '月' + d + '日 ' + rarr[r] + '，' + h + ':' + n + ':' + s;
+        }
+        if(4 < date.getHours() && date.getHours() < 11){
+            h1.innerHTML = '早上好';
+        }else if(11 <= date.getHours() && date.getHours() < 17){
+            h1.innerHTML = '中午好';
+        }else{
+            h1.innerHTML = '晚上好';
+        }
+
+        p.innerText = '现在时间：' + getTime();
+    </script>
+
+</body>
+</html>

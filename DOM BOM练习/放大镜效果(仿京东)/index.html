@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            margin:100px;
+            position:relative;
+            width:300px;
+            height:300px;
+        }
+        #photo{
+            width:300px;
+            height:300px;
+            
+        }
+        #mask{
+            display:none;
+            width:150px;
+            height:150px;
+            background-color:tomato;
+            opacity:.5;/*透明度*/
+            position:absolute;
+            top:0;
+            left:0;
+            border:1px solid #ccc;
+            cursor:move;
+        }
+        #big{
+            position:absolute;
+            display:none;
+            width:180px;
+            height:180px;
+            position:absol ute;
+            left:300px;
+            top:20px;
+            border:1px solid #ccc;
+            overflow:hidden;
+        }
+        #bigImg{
+            position:absolute;
+        }
+    </style>
+    <script src="index.js"></script>
+</head>
+<body>
+    <div id="box"> 
+        <img src="img.jpg" alt="" id="photo">
+        <!--放大层-->
+        <div id="mask"></div>
+        <!--放大浏览层-->
+        <div id="big">
+            <img src="img.jpg" alt="" id="bigImg">
+        </div>
+    </div>
+</body>
+</html>

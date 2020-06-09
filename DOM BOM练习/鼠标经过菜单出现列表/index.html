@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>鼠标经过出现列表</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+            font-size:14px;
+        }
+        li{
+            list-style:none;
+        }
+        .clearfix:after{
+            content:" ";
+            display:block;
+            height:0;
+            clear:both;
+            visibility:hidden;
+        }
+        #nav{
+            width:610px;
+            height:30px;
+            margin:10% 10%;
+        }
+        .box{
+            float:left;
+        }
+        .box a{
+            display:inline-block;
+            text-decoration:none;
+            width:150px;
+            height:30px;
+            line-height:30px;
+            text-align:center;
+            background-color:lavender;
+            margin-right:2px;
+        }
+        .box a:hover{
+            background-color:skyblue;
+        }
+        .box ul{
+            display:none;
+        }
+        .box ul li{
+            width:150px;
+            height:30px;
+            line-height:30px;
+            text-align:center;
+            background-color:gray;
+            border-bottom-left-radius:5px;
+            border-bottom-right-radius:5px;
+            margin-bottom:1px;
+        }
+        .box ul li:hover{
+            background-color:cadetblue;
+        }
+    </style>
+</head>
+<body>
+    <div id="nav">
+        <div class="box">
+            <a href="#">第一个</a>
+            <ul>
+                <li>列表1</li>
+                <li>列表2</li>
+                <li>列表3</li>
+                <li>列表4</li>
+            </ul>
+        </div>
+        <div  class="box">
+            <a href="#">第二个</a>
+            <ul>
+                <li>列表1</li>
+                <li>列表2</li>
+                <li>列表3</li>
+            </ul>
+        </div>
+        <div  class="box">
+            <a href="#">第三个</a>
+            <ul>
+                <li>列表1</li>
+                <li>列表2</li>
+                <li>列表3</li>
+                <li>列表4</li>
+            </ul>
+        </div>
+        <div  class="box">
+            <a href="#">第四个</a>
+            <ul>
+                <li>列表1</li>
+                <li>列表2</li>
+                <li>列表3</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        var nav = document.getElementById('nav');
+        var box = nav.querySelectorAll('.box');
+        for(var i = 0; i < box.length;i++){
+            box[i].onmouseover = function(){
+                //选中变色
+                this.children[0].style.background = 'skyblue';
+                //选中展开列表
+                this.children[1].style.display = 'block';
+            }
+            //离开回复原样
+            box[i].onmouseout = function(){
+                this.children[0].style.background = '';
+                this.children[1].style.display = '';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,229 @@
+*{
+	padding:0;
+	margin:0;
+}
+a{
+	text-decoration:none;
+}
+i,em{
+	font-style:normal;
+}
+li{
+	list-style:none;
+}
+body{
+	max-width:540px;
+	min-width:320px;
+	margin:0 auto;
+	color: #000;
+	overflow-x:hidden;
+	-webkit-tap-highlight-color: transparent;
+}
+
+/*搜索模块*/
+.search-index{
+	display:flex;
+	/*固定定位*/
+	position:fixed;
+	top:0;
+	/*居中对齐*/
+	left:50%;
+	-webkit-transfrom: translateX(-50%);
+	transform:translateX(-50%);
+	/*固定定位需要宽度*/
+	width:100%;
+	min-width:320px;
+	max-width:540px;
+	height:44px;
+	background:white;
+	box-sizing:border-box;
+	padding-left:13px;
+	/*背景透明化*/
+	/*background:0 0;*/
+}
+/*搜索框*/
+.search-index-box{
+	flex:1;
+	height:30px;
+	/*行高等于高度加边框才居中*/
+	line-height:28px;
+	box-sizing:border-box;
+	margin:7px 2px;
+	border-radius:14px;
+	border:1px solid #ccc;
+	font-size:15px;
+	color:#666666;
+	background:#fff;
+
+}
+.search-index-box span::after{
+	content:"";
+	display:block;
+	width:35px;
+	height:100%;
+	background:url(../image/search.png) no-repeat 15px 7px;
+	background-size:22px auto;
+	float:left;
+}
+/*搜索栏右边*/
+.notice-myctrip{
+	width:44px;
+	height:44px;
+	font-size:.75rem;
+	text-align:center;
+	color:black;
+	margin:0 4px;
+}
+.notice-myctrip::before{
+	content:"";
+	display:block;
+	width:23px;
+	height:23px;
+	background:url(../image/icon.png) no-repeat -59px -194px;
+	background-size:104px auto;
+	margin:4px auto 0;
+}
+/*背景*/
+.bg{/*由于搜索栏为固定定位，要使图片完整显示需要下移*/
+	margin-top:44px;
+}
+.bg img{
+	width:100%;
+	display:block;
+	border:none; 
+}
+/*菜单栏1*/
+.local-nav{
+	display:flex;
+	height:64px;
+	box-sizing:border-box;
+	margin:3px 4px;
+	background-color:#fff;
+	border-radius:8px;
+	box-shadow:0 2px 6px rgba(0,0,0,.08);
+}
+.local-nav li{
+	flex:1;
+}
+.local-nav li a span{
+	font-size:12px;
+}
+.local-nav a{
+	display:flex;
+	flex-direction:column;
+	align-items:center; 
+	color:#222;
+}
+.local-nav li i{
+	display:block; 
+	width:40px;
+	height:40px;
+	border-radius:100%;
+	background:url(../image/nav.png) no-repeat;
+	background-size:40px 200px;
+}
+/*插入图片*/
+.local-nav li:nth-of-type(1) i{
+	background-size:0 -10px;
+}
+.local-nav li:nth-of-type(2) i{
+	background-position:0 -40px;
+}
+.local-nav li:nth-of-type(3) i{
+	background-position:0 -80px;
+}
+.local-nav li:nth-of-type(4) i{
+	background-position:0 -120px;
+}
+.local-nav li:nth-of-type(5) i{
+	background-position:0 -160px;
+}
+/*详细分类*/
+.grid-nav{
+	margin:0 4px 3px;
+	font-size:14px;
+	border-radius:8px;
+	overflow:hidden;
+}
+.grid{
+	display:flex;
+	height:64px;
+}
+.grid-nav div:nth-child(-n+2){
+	margin-bottom:1px;
+}
+.grid-nav a{
+	color:#fff;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+}
+/*第一列*/
+.grid-d1 a:nth-child(1){
+	background:url(../image/1-11.png) rgba(244,80,48,.8) no-repeat right bottom;
+	background-size:73px auto;
+	margin-right:1px;
+	padding-left:12px;
+	justify-content:flex-start;
+	flex:31%;
+}
+.grid-d1 a:nth-child(2){
+	background:url(../image/1-12.png) rgba(244,80,48,.8) no-repeat left bottom;
+	background-size:37px auto;
+	margin-right:1px;
+	flex:23%;
+}
+.grid-d1 a:nth-child(3){
+	background:url(../image/1-13.png) #ffd252 no-repeat right bottom;
+	background-size:86px auto;
+	color:red;
+	flex:46%;
+}
+/*第二列*/
+.grid-d2 a:nth-child(1){
+	background:url(../image/1-21.png) #4b8fed no-repeat right bottom;
+	background-size:73px auto;
+	margin-right:1px;
+	padding-left:12px;
+	justify-content:flex-start;
+	flex:31%;
+}
+.grid-d2 a:nth-child(2){
+	background:url(../image/1-22.png) #4b8fed no-repeat left bottom;
+	background-size:37px auto;
+	margin-right:1px;
+	flex:23%;
+}
+.grid-d2 a:nth-child(3){
+	background:#4b8fed no-repeat right bottom;
+	margin-right:1px;
+	flex:23%;
+}
+.grid-d2 a:nth-child(4){
+	background:#4b8fed no-repeat right bottom;
+	flex:23%;
+}
+/*第三列*/
+.grid-d3 a:nth-child(1){
+	background:url(../image/1-31.png) #34c2aa no-repeat right bottom;
+	background-size:73px auto;
+	margin-right:1px;
+	padding-left:12px;
+	justify-content:flex-start;
+	flex:31%;
+}
+.grid-d3 a:nth-child(2){
+	background:url(../image/1-32.png) #34c2aa no-repeat left bottom;
+	background-size:37px auto;
+	margin-right:1px;
+	flex:23%;
+}
+.grid-d3 a:nth-child(3){
+	background:#34c2aa no-repeat right bottom;
+	margin-right:1px;
+	flex:23%;
+}
+.grid-d3 a:nth-child(4){
+	background:#6cd557 no-repeat right bottom;
+	flex:23%;
+}

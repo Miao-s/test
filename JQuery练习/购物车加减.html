@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>购物车物品加减，总价统计</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        .box{
+            width:300px;
+            height:70px;
+            margin:10px;
+            border:1px solid #000;
+            text-align: center;
+            line-height:70px;
+        }
+        a{
+            display:inline-block;
+            width:30px;
+            height:30px;
+            background-color:gray;
+            color:#000;
+            text-decoration:none;
+            line-height:30px;
+        }
+        input{
+            width:50px;
+            height:50px;
+            text-align: center;
+        }
+        span{
+            height:50px;
+            margin-left:10px;
+        }
+    </style>
+    <script src="jquery-1.7.2.js"></script>
+    <script>
+        $(function(){
+            //增加减少
+            $('.next').click(function(){
+                var i = $(this).prevAll('input').val();
+                i++;
+                $(this).prevAll().val(i);
+                //总价变化
+                var dj = $(this).siblings('.dj').html();
+                dj = dj.substr(1);
+                $(this).siblings('.zj').html('￥' + (dj * i));
+            });
+            $('.last').click(function(){
+                var i = $(this).nextAll('input').val();
+                i--;
+                $(this).nextAll().val(i);
+                //总价变化
+                var dj = $(this).siblings('.dj').html();
+                dj = dj.substr(1);
+                $(this).siblings('.zj').html('￥' + (dj * i));
+            });
+            $('.itxt').change(function(){
+                var i = $(this).val();
+                var dj = $(this).siblings('.dj').html();
+                dj = dj.substr(1);
+                $(this).siblings('.zj').html('￥' + (dj * i));
+            });
+            //保留小数，用toFixed(位数)方法 
+        });
+    </script>
+</head>
+<body>
+    <div class="box">
+        <a href="javascript:;" class="last">-</a>
+        <input type="text" class="itxt" value="1">
+        <a href="javascript:;" class="next">+</a>
+        <span class="dj">￥12</span>
+        <span class="zj">￥12</span>
+    </div>
+    <div class="box">
+        <a href="javascript:;" class="last">-</a>
+        <input type="text" class="itxt" value="1">
+        <a href="javascript:;" class="next">+</a>
+        <span class="dj">￥8</span>
+        <span class="zj">￥8</span>
+    </div>
+    <div class="box">
+        <a href="javascript:;" class="last">-</a>
+        <input type="text" class="itxt" value="1">
+        <a href="javascript:;" class="next">+</a>
+        <span class="dj">￥23</span>
+        <span class="zj">￥23</span>
+    </div>
+</body>
+</html>

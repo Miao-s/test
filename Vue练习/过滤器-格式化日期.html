@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div class="box">
+        <span>修改前：{{date}}</span>
+        <br>
+        <span>修改后：{{date | format('yyy-MM-dd')}}</span>
+    </div>
+    <script>
+        Vue.filter('format',function(value,arg){
+            var ret = '';
+            if(arg == 'yyy-MM-dd'){
+                ret += value.getFullYear() + '-' + (value.getMonth() + 1) + '-' + value.getDate();
+            }
+            return ret;
+        });
+        var vm = new Vue({
+            el:'.box',
+            data:{
+                date:new Date(),
+            }
+        })
+    </script>
+</body>
+</html>
