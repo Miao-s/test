@@ -1,0 +1,23 @@
+$(function(){
+    $('.box2-box,.box3-box,.box4-box,.box5-box').slideUp();
+    $('.box1').click(function(){
+        $('.box1-box').slideToggle();
+        $('.box2-box,.box3-box,.box4-box,.box5-box').slideUp();
+    })
+    $('.box2').click(function(){
+        $('.box2-box').slideToggle();
+        $('.box1-box,.box3-box,.box4-box,.box5-box').slideUp();
+    })
+    $('.box3').click(function(){
+        $('.box3-box').slideToggle();
+        $('.box1-box,.box2-box,.box4-box,.box5-box').slideUp();
+    })
+    $('.box4').click(function(){
+        $('.box4-box').slideToggle();
+        $('.box1-box,.box2-box,.box3-box,.box5-box').slideUp();
+    })
+    $('.box5').click(function(){
+        $('.box5-box').slideToggle();
+        $('.box1-box,.box2-box,.box3-box,.box4-box').slideUp();
+    })
+})
